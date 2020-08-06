@@ -1,0 +1,21 @@
+$font-stack: Arial, Helvetica, sans-serif;
+$light-color: f4f4f4;
+$primary-color: rgb(124, 124, 212);
+$secondary-color: rgb(196, 82, 82);
+$nav-color: rgb(70, 68, 68);
+//$nav-color: white;
+
+//set text color based on function
+@function set-text-color($color){
+    @if(lightness($color) > 70){
+        @return #333;
+    } @else{
+        @return #fff;
+    }
+}
+
+// set background and text color
+@mixin set-background($color) {
+    background-color: $color;
+    color: set-text-color($color)
+}
